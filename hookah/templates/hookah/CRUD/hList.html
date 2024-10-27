@@ -1,0 +1,25 @@
+{% extends "hookah/base.html" %} {% block content %}
+<h1 class="d-flex justify-content-left align-items-center">
+    Tabacos y carbones
+</h1>
+ 
+<div class="row">
+    {% for element in hookahs %}
+    <div class="col-3 ">
+        <div class="card" style="width: 18rem;">
+            <img src={{element.image}} class="card-img-top" alt={{element.name}}>
+            <div class="card-body">
+                <h5 class="card-title">{{element}}</h5>
+                <p class="card-text">{{element.description}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Puntuación media: {{element.averageRating}}</li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Detalle</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

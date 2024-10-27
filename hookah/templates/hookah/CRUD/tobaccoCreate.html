@@ -1,0 +1,8 @@
+{% extends "hookah/base.html" %} {% block content %}
+<h1>Añadir tabaco</h1>
+
+<form method="POST">
+	{% csrf_token%} {{ form.as_p }}
+	<input type="submit" value="Añadir" class="btn btnCustom" />
+</form>
+{% endblock %}
